@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'fontstuck';
+  src: url('assets/fonts/fontstuck.ttf');
+}
+
+:root {
+  --col1: #FF067C;
+  --col2: #9A2446;
+  --col3: #24D6FF;
+
+  --bshad: 2px 2px var(--col2), 4px 4px var(--col2), 6px 6px var(--col2), 8px 8px var(--col2), 10px 10px var(--col2);
+}
+
+body { 
+  background-color: #ccc; 
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+body {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, darkgrey 2px, transparent 1px),
+    linear-gradient(to bottom, darkgrey 2px, transparent 1px);
+  animation: bggrid linear 2s infinite;
+}
+
+@keyframes bggrid {
+  to { background-position: -80px 40px; }
+}
+
+
+h1 {
+  margin: 60px auto 20px;
+  font-family: 'fontstuck';
+}
+
+p, div {
+  background: #eee;
+  border: solid var(--col2);
+  box-shadow: var(--bshad);
+  padding: 10px;
+
+  max-width: 900px;
+  margin: auto;
+}

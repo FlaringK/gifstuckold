@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Symbol.png" />
+  <title>GifStuck - Sylladex</title>
+
+  <meta property="og:title" content="GifStuck - Sylladex " />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Icon.png" />
+  <meta property="og:description" content="Generate Gifs of Sylladexes from HouseTrapped" />
+  <meta name="theme-color" content="#cccccc">
+
+  <link rel="stylesheet" href="sylladexstyle.css">
+</head>
+<body>
+  <h1>Generate sylladeX GIF</h1>
+  <p id=intro>
+    Generate a sylladex picking up or dropping an item! Once you've uploaded your backgrounds and card images, simply choose your modus & sylladex actions below and hit create GIF!
+    <br><br>
+    Currently only STACK, QUEUE and ARRAY modi are avalible, but I hope to add more in the future.
+  </p>
+
+  <br>
+  <h2>Step 1: Upload Assets</h2>
+  <p>
+    <div id="uploadwrap">
+      Upload backgrounds (Must be 650 x 450 pixels):
+      <div id="uploadbg">
+        <div id="uploadbgBefore">
+          <label for="bgB">Select first background image:</label>
+          <input type="file" id="bgB" name="bgB" accept="image/*" onchange="previewUpload(event, this, 0)">
+          <img src="assets/placeholders/temp bgB.png" class="uploadedbg">
+        </div>
+        <div id="uploadbgAfter">
+          <label for="bgA">Select second background image:</label>
+          <input type="file" id="bgA" name="bgA" accept="image/*" onchange="previewUpload(event, this, 1)">
+          <img src="assets/placeholders/temp bgA.png" class="uploadedbg">
+        </div>
+      </div>
+      <br>
+      Upload Sylladex Items (Must 100x125 pixels or 4:5):
+      <div id="uploadcards">
+        <label for="cardno">Number of cards:</label> <input type="number" name="cardno" id="cardno" min=0 max=12 value=3 onchange="updatecardlist(this.value)">
+        <div id="uploadcardlist">
+
+        </div>
+      </div>
+    </div>
+  </p>
+  <br>
+  <h2>Step 2: Configure SylladeX</h2>
+  <p id="sylladexoptions">
+    <label for="sdex">Choose a sylladex action:</label>
+    <select name="sdex" id="sdex">
+      <option value="open">Open sylladex</option>
+      <option value="close">Close sylladex</option>
+      <option value="none">Do Nothing</option>
+    </select>
+    <br>
+    <label for="item">Choose an item action:</label>
+    <select name="item" id="item">
+      <option value="pick">Pickup item</option>
+      <option value="drop">Drop item</option>
+    </select>
+    <br>
+    <label for="modi">Choose a modus:</label>
+    <select name="modi" id="modi" oninput="selectModus(this.value)">
+      <option value="fifo">Stack (FIFO)</option>
+      <option value="filo">Queue (FILO)</option>
+      <option value="array">Array</option>
+    </select>
+  </p>
+  <div id="optionsWrap">
+    Modus Options:
+    <div id="options">
+
+    </div>
+    Loaded Assets: <span id="loadtally">0 / 0</span>
+  </div>
+
+  <br>
+  <h2>Step 3: Create</h2>
+  <button id="createGIF" onclick="createGiffifo()">Create Gif</button>
+
+  <br>
+  <img id="result" src="assets/placeholders/01542.gif">
+
+  <p id=intro>If there are any problems, don't hesitate to dm me on discord at FlaringK#4275</p>
+  <br>
+  <canvas width="650" height="450" id="bitmap" style="display: none;"></canvas>
+  <div id="preload" style="display: none;"></div>
+
+  <script src="gif.js-master/dist/gif.js"></script>
+  <script src="sylladex.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'fontstuck';
+  src: url('assets/fonts/fontstuck.ttf');
+}
+
+:root {
+  --col1: #FF067C;
+  --col2: #9A2446;
+  --col3: #24D6FF;
+
+  --bshad: 2px 2px var(--col2), 4px 4px var(--col2), 6px 6px var(--col2), 8px 8px var(--col2), 10px 10px var(--col2);
+}
+
+body { 
+  background-color: #ccc; 
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+body {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, darkgrey 2px, transparent 1px),
+    linear-gradient(to bottom, darkgrey 2px, transparent 1px);
+  animation: bggrid linear 2s infinite;
+}
+
+@keyframes bggrid {
+  to { background-position: -80px 40px; }
+}
+
+body > * {
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  margin: 60px auto 20px;
+  font-family: 'fontstuck';
+}
+h2 { 
+  font-family: 'fontstuck';
+  margin-top: 20px;
+}
+
+#intro {
+  background: #eee;
+  border: solid var(--col2);
+  box-shadow: var(--bshad);
+  padding: 10px;
+}
+
+#uploadwrap, #sylladexoptions, #optionsWrap {
+  background-color: var(--col1);
+  color: var(--col3);
+  box-shadow: var(--bshad);
+  outline: none;
+  margin-bottom: 10px;
+  padding: 40px;
+  font-size: 24px;
+  text-shadow: 2px 2px var(--col2);
+}
+#uploadwrap *, #sylladexoptions *, #optionsWrap *:not(span) {
+  font-size: initial;
+  margin-top: 10px;
+  text-shadow: none;
+}
+#uploadwrap img {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+  padding: 10px;
+  border: solid var(--col2);
+  box-shadow: var(--bshad);
+  background-color: #eee;
+}
+
+#sylladexoptions, #optionsWrap {
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+#uploadbg > div, #uploadcardlist > div, #optionsWrap > div {
+  background-color: white;
+  color: black;
+  box-shadow: var(--bshad);
+  margin: 0 10px 15px 0;
+  padding: 15px;
+}
+#uploadbg img {
+  width: 260px;
+  height: 180px;
+}
+
+#createGIF {
+  font-family: 'fontstuck';
+  font-size: 30px;
+  padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  border: none;
+  background: #008C43;
+  color: white;
+  --col2: #000100;
+  box-shadow: 2px 2px var(--col2), 4px 4px var(--col2), 6px 6px var(--col2), 8px 8px var(--col2), 10px 10px var(--col2);
+}
+#createGIF:hover {
+  background: #00E470;
+}
+#createGIF:active {
+  box-shadow: none;
+  transform: translate(10px, 10px);
+}
+
+#result {
+  width: 650px;
+  height: 450px;
+  background: #eee;
+  --col2: #000100;
+  border: solid var(--col2);
+  box-shadow: 2px 2px var(--col2), 4px 4px var(--col2), 6px 6px var(--col2), 8px 8px var(--col2), 10px 10px var(--col2);
+  margin-bottom: 40px;
+}
