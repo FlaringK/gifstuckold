@@ -69,11 +69,12 @@ let createEnterName = () => {
     context.fillStyle = "black"
     context.fillText(name[i], letterpos, 82)
 
-    if (name[i + 1]) { context.fillRect(letterpos + (lw * 0.5), 78, 27, 5) }
-
-    gif.addFrame(canvas, {copy: true, delay: 100})
+    if (name[i + 1]) { 
+      context.fillRect(letterpos + (lw * 0.5), 78, 27, 5) 
+      gif.addFrame(canvas, {copy: true, delay: 100})
+    }
   }
-  gif.addFrame(canvas, {copy: true, delay: 400})
+  gif.addFrame(canvas, {copy: true, delay: 1000})
 
   let drawneutral = text => {
     var newstartpos = 325 - (text.length * 15)
@@ -85,9 +86,11 @@ let createEnterName = () => {
     }
   }
 
+  bg = 1
+
   //If correct name
   if (react == "yes") {
-    bg = 1
+    
 
     drawneutral(name);
     context.drawImage(tick, startpos - 70, 38)
@@ -101,22 +104,22 @@ let createEnterName = () => {
     context.drawImage(tick, startpos - 70, 38)
     gif.addFrame(canvas, {copy: true, delay: 2000})
   } else {
+    drawneutral(name);
+
     //blur effect
-    var n = 3
-    for (let l = 0; l < 8; l ++) {
+    for (let l = 0; l < 4; l ++) {
       for (let i = 0; i < name.length; i ++) {
         var letterpos = startpos + ((i + 0.5) * lw)
-        for (let j = 0; j < n; j ++) {
-          for (let k = 0; k < n; k ++) {
+        for (let j = 0; j < 3; j ++) {
+          for (let k = 0; k < 4; k ++) {
             context.fillStyle = randomGreyHex()
-            context.fillRect(letterpos - (j * lw / n) + 3, 82 - ((k + 1) * lh / n), 10, 11)
+            context.fillRect(letterpos - (j * 10) + 3, 82 - ((k + 0.5) * 10), 10, 10)
           }
         }
       }
       gif.addFrame(canvas, {copy: true, delay: 50})
     }
 
-    bg = 1
     //Draw quip
     context.fillStyle = "red"
     drawneutral(quip);
