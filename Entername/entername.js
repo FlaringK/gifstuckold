@@ -13,6 +13,15 @@ let clearcanvas = () => {
 }
 clearcanvas() // GIF can't do transparent so do white
 
+let previewUpload = (event, element, key) => {
+  var output = element.nextElementSibling;
+  var source = URL.createObjectURL(event.target.files[0])
+  output.src = source;
+  output.onload = function() {
+    URL.revokeObjectURL(output.src) // free memory
+  }
+}
+
 /////////////////////
 // Create the Gif! //
 /////////////////////
