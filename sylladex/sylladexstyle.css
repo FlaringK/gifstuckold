@@ -50,7 +50,7 @@ h2 {
   padding: 10px;
 }
 
-#uploadwrap, #sylladexoptions, #optionsWrap {
+#uploadwrap, #useroptions, #optionsWrap {
   background-color: var(--col1);
   color: var(--col3);
   box-shadow: var(--bshad);
@@ -60,7 +60,7 @@ h2 {
   font-size: 24px;
   text-shadow: 2px 2px var(--col2);
 }
-#uploadwrap *, #sylladexoptions *, #optionsWrap *:not(span) {
+#uploadwrap *, #useroptions *, #optionsWrap *:not(span) {
   font-size: initial;
   margin-top: 10px;
   text-shadow: none;
@@ -77,7 +77,7 @@ h2 {
   background-color: #eee;
 }
 
-#sylladexoptions, #optionsWrap {
+#useroptions, #optionsWrap {
   padding-top: 10px;
   padding-bottom: 15px;
 }
