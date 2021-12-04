@@ -40,12 +40,12 @@
   <h2>Step 2: Name options</h2>
   <p id="useroptions"> 
     <label for="name">Choose a name:</label>
-    <input type="text" name="name" id="name">
+    <input type="text" name="name" id="name" value="Jade Harley">
     <br>
     <label for="react">Choose a reaction:</label>
     <select name="react" id="react">
-      <option value="open">Correct name</option>
-      <option value="close">Incorrect name</option>
+      <option value="yes">Correct name</option>
+      <option value="no">Incorrect name</option>
     </select>
     <br>
     <label for="quip">If name is incorrect, choose a quip:</label>
@@ -57,13 +57,14 @@
   <button id="createGIF" onclick="createEnterName()">Create Gif</button>
 
   <br>
-  <img id="result" src="assets/placeholders/01542.gif">
+  <img id="result" src="assets/Zoosmell.gif">
 
   <p id=intro>If there are any problems, don't hesitate to dm me on discord at FlaringK#4275</p>
   <br>
-  <canvas width="650" height="450" id="bitmap"></canvas>
+  <canvas width="650" height="450" id="bitmap" style="display: none;"></canvas>
   <div id="preload" style="display: none;">
     <img src="assets/Entername.png" alt="" id="nameplate">
+    <img src="assets/Tick.png" alt="" id="tick">
   </div>
 
   <script src="https://flaringk.github.io/GifStuck/sylladex/gif.js-master/dist/gif.js"></script>
