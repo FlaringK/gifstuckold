@@ -55,7 +55,7 @@ let createEnterName = () => {
   clearcanvas();
   drawbg();
   context.fillRect(startpos + (lw * 0.5), 78, 27, 5)
-  gif.addFrame(canvas, {copy: true, delay: 500})
+  gif.addFrame(canvas, {copy: true, delay: 1000})
   context.fillStyle = "white"
   context.fillRect(startpos + (lw * 0.5), 78, 27, 5)
   
