@@ -3,6 +3,16 @@
   src: url('assets/fonts/fontstuck.ttf');
 }
 
+@font-face {
+  font-family: 'alternian';
+  src: url('assets/fonts/alternian.ttf');
+}
+
+@font-face {
+  font-family: 'alternianalt';
+  src: url('assets/fonts/hiveswap-alternian.ttf');
+}
+
 :root {
   --col1: #FF067C;
   --col2: #9A2446;
