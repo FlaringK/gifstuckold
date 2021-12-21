@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Symbol.png" />
+  <title>GifStuck - Strife Specibus</title>
+
+  <meta property="og:title" content="GifStuck - Strife Specibus " />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Icon.png" />
+  <meta property="og:description" content="Generate Gifs of Strife Specibuses being Allocated" />
+  <meta name="theme-color" content="#cccccc">
+
+  <link rel="stylesheet" href="https://flaringk.github.io/GifStuck/sylladex/sylladexstyle.css">
+</head>
+<body>
+  <h1>Generate Specibus Allocation GIF</h1>
+
+  <br>
+  <h2>Step 1: Upload Assets</h2>
+  <div id="uploadwrap">
+    Upload Items:
+    <div id="uploadbg">
+      <div id="uploadbgBefore">
+        <label for="bgB">Upload Weapon (Must 100x125 pixels or 4:5):</label>
+        <input type="file" id="bgB" name="bgB" accept="image/*" onchange="previewUpload(event, this, 0)">
+        <img src="assets/bgB.png" class="uploadedbg">
+      </div>
+      <div id="uploadbgAfter">
+        <label for="bgA">Upload Specibus Kind Icon (Must be 185x215 pixels or that ratio):</label>
+        <input type="file" id="bgA" name="bgA" accept="image/*" onchange="previewUpload(event, this, 1)">
+        <img src="assets/bgA.png" class="uploadedbg">
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <h2>Step 2: Specibus options</h2>
+  <p id="useroptions"> 
+    <label for="name">Choose the specibus Kind:</label>
+    <input type="text" name="name" id="name" value="hammerkind">
+  </p>
+
+  <br>
+  <h2>Step 3: Create</h2>
+  <button id="createGIF" onclick="createEnterName()">Create Gif</button>
+
+  <br>
+  <img id="result" src="assets/Zoosmell.gif">
+
+  <p id=intro>If there are any problems, don't hesitate to dm me on discord at FlaringK#4275</p>
+  <br>
+  <canvas width="650" height="450" id="bitmap" style="display: none;"></canvas>
+  <div id="preload" style="display: none;">
+    <img src="assets/Entername.png" alt="" id="nameplate">
+    <img src="assets/Tick.png" alt="" id="tick">
+  </div>
+
+  <script src="https://flaringk.github.io/GifStuck/sylladex/gif.js-master/dist/gif.js"></script>
+  <script src="entername.js"></script>
+</body>
+</html>
