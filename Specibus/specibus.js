@@ -32,7 +32,7 @@ let createSpecibus = () => {
   var greenblank = document.getElementById('greenblank')
   var greentype = document.getElementById('greentype')
 
-  var kind = document.getElementById('name').value 
+  var kind = document.getElementById('name').value.toLowerCase()
 
   context.textAlign = "center"
   context.textBaseline = "alphabetic"
@@ -79,7 +79,14 @@ let createSpecibus = () => {
   context.drawImage(greentype, 0, 0)
   context.drawImage(assets[1], 197, 85, 185, 215)
   context.drawImage(assets[0], 309, 327, 24, 30)
-  context.fillText(kind, 325, 407);
+
+  if (kind.includes("j") || kind.includes("y") || kind.includes("g") || kind.includes("q") || kind.includes("p")) {
+    context.font = "56px captchacard"
+    context.fillText(kind, 325, 402);
+  } else {
+    context.fillText(kind, 325, 407);
+  }
+
   gif.addFrame(canvas, {copy: true, delay: 5000})
 
   // DISPLAY RESULT!!!
