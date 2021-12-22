@@ -13,6 +13,11 @@
   src: url('assets/fonts/hiveswap-alternian.ttf');
 }
 
+@font-face {
+  font-family: 'captchacard';
+  src: url('assets/fonts/SylladexFanon.ttf');
+}
+
 :root {
   --col1: #FF067C;
   --col2: #9A2446;

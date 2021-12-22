@@ -20,7 +20,7 @@
   <br>
   <h2>Step 1: Upload Assets</h2>
   <div id="uploadwrap">
-    Upload Items:
+    Upload Assets:
     <div id="uploadbg">
       <div id="uploadbgBefore">
         <label for="asset1">Upload Weapon (Must 100x125 pixels or 4:5):</label><br>
@@ -33,12 +33,12 @@
         <img src="Specibus Assets/HammerIcon.png" class="uploadedbg">
       </div>
       <div id="uploadbgAfter">
-        <label for="asset3">Upload Specibus Kind Icon (Must be 185x215 pixels):</label><br>
+        <label for="asset3">Upload Captcha card:</label><br>
         <input type="file" id="asset3" name="asset3" accept="image/*" onchange="previewUpload(event, this, 1)">
         <img src="Specibus Assets/card.png" class="uploadedbg">
       </div>
       <div id="uploadbgAfter">
-        <label for="asset4">Upload Specibus Kind Icon (Must be 185x215 pixels):</label><br>
+        <label for="asset4">Upload Cursor:</label><br>
         <input type="file" id="asset4" name="asset4" accept="image/*" onchange="previewUpload(event, this, 1)">
         <img src="Specibus Assets/Cursor.png" class="uploadedbg">
       </div>
@@ -54,7 +54,7 @@
 
   <br>
   <h2>Step 3: Create</h2>
-  <button id="createGIF" onclick="createEnterName()">Create Gif</button>
+  <button id="createGIF" onclick="createSpecibus()">Create Gif</button>
 
   <br>
   <img id="result" src="assets/Zoosmell.gif">
@@ -69,6 +69,6 @@
   </div>
 
   <script src="https://flaringk.github.io/GifStuck/sylladex/gif.js-master/dist/gif.js"></script>
-  <script src="entername.js"></script>
+  <script src="specibus.js"></script>
 </body>
 </html>
