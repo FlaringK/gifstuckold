@@ -100,8 +100,7 @@ h2 {
   padding: 15px;
 }
 #uploadbg img {
-  width: 260px;
-  height: 180px;
+  max-height: 180px;
 }
 
 #createGIF {
