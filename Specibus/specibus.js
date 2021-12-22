@@ -34,7 +34,10 @@ let createSpecibus = () => {
 
   var kind = document.getElementById('name').value 
 
-  var bg = 0
+  context.textAlign = "center"
+  context.textBaseline = "alphabetic"
+  context.fillStyle = "#00E371"
+  context.font = "60px captchacard"
 
   // BEGIN GIF
   var gif = new GIF({
@@ -51,7 +54,7 @@ let createSpecibus = () => {
   let dragCaptcha = xpos => {
     context.drawImage(greyblank, 0, 0)
     context.drawImage(assets[2], xpos, 110)
-    context.drawImage(assets[0], xpos + 13, 140)
+    context.drawImage(assets[0], xpos + 13, 140, 100, 125)
     context.drawImage(assets[3], xpos + 54, 260)
   }
 
@@ -74,8 +77,9 @@ let createSpecibus = () => {
   gif.addFrame(canvas, {copy: true, delay: 50})
 
   context.drawImage(greentype, 0, 0)
-  context.drawImage(assets[1], 197, 85)
+  context.drawImage(assets[1], 197, 85, 185, 215)
   context.drawImage(assets[0], 309, 327, 24, 30)
+  context.fillText(kind, 325, 407);
   gif.addFrame(canvas, {copy: true, delay: 5000})
 
   // DISPLAY RESULT!!!
