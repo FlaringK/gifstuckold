@@ -3,6 +3,16 @@
   src: url('https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Personal%20Sites/Fonts/fontstuck.ttf');
 }
 
+@font-face {
+  font-family: 'trolltype';
+  src: url('/Entername\ Alt/assets/trolltype.ttf');
+}
+
+@font-face {
+  font-family: 'alternian';
+  src: url('/Entername\ Alt/assets/alternian.ttf');
+}
+
 :root {
   --col1: #FF067C;
   --col2: #9A2446;

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Symbol.png" />
+  <title>GifStuck - Enter Alternian name</title>
+
+  <meta property="og:title" content="GifStuck - Entername " />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Icon.png" />
+  <meta property="og:description" content="Generate Gifs of Names Being Entered ALT" />
+  <meta name="theme-color" content="#cccccc">
+
+  <link rel="stylesheet" href="https://flaringk.github.io/GifStuck/sylladex/sylladexstyle.css">
+</head>
+<body>
+
+  <h1>Generate enter <span style="color: red">ALT</span> name GIF</h1>
+  <br>
+  <h2>Step 1: Upload Assets</h2>
+  <div id="uploadwrap">
+    Upload backgrounds (Must be 650 x 450 pixels):
+    <div id="uploadbg">
+      <div id="uploadbgBefore">
+        <label for="bgB">Select first background image:</label>
+        <input type="file" id="bgB" name="bgB" accept="image/*" onchange="previewUpload(event, this, 0)">
+        <img src="assets/bgB.png" class="uploadedbg">
+      </div>
+      <div id="uploadbgAfter">
+        <label for="bgA">Select second background image (reaction):</label>
+        <input type="file" id="bgA" name="bgA" accept="image/*" onchange="previewUpload(event, this, 1)">
+        <img src="assets/bgA.png" class="uploadedbg">
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <h2>Step 2: Name options</h2>
+  <p id="useroptions"> 
+    <label for="name">Choose a name:</label>
+    <input type="text" name="name" id="name" value="Jade Harley">
+    <br>
+    <label for="react">Choose a reaction:</label>
+    <select name="react" id="react">
+      <option value="yes">Correct name</option>
+      <option value="maybe">Incorrect name (With cross)</option>
+      <option value="no">Incorrect name (With quip)</option>
+    </select>
+    <br>
+    <label for="quip">If name is incorrect, choose a quip:</label>
+    <input type="text" name="quip" id="quip" value="Try again, Smartass">
+  </p>
+
+  <br>
+  <h2>Step 3: Create</h2>
+  <p>If the font dosen't load the first time, give it a second before trying again, you browser may not have loaded it yet.</p>
+  <button id="createGIF" onclick="createEnterName()">Create Gif</button>
+
+  <br>
+  <img id="result" src="assets/Zoosmell.gif">
+
+  <p id=intro>If there are any problems, don't hesitate to dm me on discord at FlaringK#4275</p>
+  <br>
+  <canvas width="650" height="450" id="bitmap" style="display: none;"></canvas>
+  <div id="preload" style="display: none;">
+    <img src="assets/Entername.png" alt="" id="nameplate">
+    <img src="assets/Tick.png" alt="" id="tick">
+    <img src="assets/Cross.png" alt="" id="cross">
+  </div>
+
+  <script src="https://flaringk.github.io/GifStuck/sylladex/gif.js-master/dist/gif.js"></script>
+  <script src="entername.js"></script>
+</body>
+</html>
