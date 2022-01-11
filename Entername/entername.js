@@ -30,6 +30,7 @@ let createEnterName = () => {
   var backgrounds = document.querySelectorAll(".uploadedbg")
   var nameplate = document.getElementById('nameplate')
   var tick = document.getElementById('tick')
+  var qm = document.getElementById('qm')
 
   var name = document.getElementById('name').value 
   var react = document.getElementById('react').value 
@@ -63,10 +64,10 @@ let createEnterName = () => {
   //First frame
   clearcanvas();
   drawbg();
-  context.fillRect(startpos + (lw * 0.5), 78, 27, 5)
+  context.fillRect(startpos, 78, 27, 5)
   gif.addFrame(canvas, {copy: true, delay: 1000})
   context.fillStyle = "white"
-  context.fillRect(startpos + (lw * 0.5), 78, 27, 5)
+  context.fillRect(startpos, 78, 27, 5)
   
   //Write text 1 letter at a time
   context.textAlign = "center";
@@ -99,8 +100,6 @@ let createEnterName = () => {
 
   //If correct name
   if (react == "yes") {
-    
-
     drawneutral(name);
     context.drawImage(tick, startpos - 70, 38)
     gif.addFrame(canvas, {copy: true, delay: 50})
@@ -111,6 +110,18 @@ let createEnterName = () => {
     drawneutral(name);
     gif.addFrame(canvas, {copy: true, delay: 50})
     context.drawImage(tick, startpos - 70, 38)
+    gif.addFrame(canvas, {copy: true, delay: 2000})
+  } else if (react == "maybe") {
+    drawneutral(name);
+    context.drawImage(qm, startpos - 70, 38)
+    gif.addFrame(canvas, {copy: true, delay: 50})
+    drawneutral(name);
+    gif.addFrame(canvas, {copy: true, delay: 50})
+    context.drawImage(qm, startpos - 70, 38)
+    gif.addFrame(canvas, {copy: true, delay: 50})
+    drawneutral(name);
+    gif.addFrame(canvas, {copy: true, delay: 50})
+    context.drawImage(qm, startpos - 70, 38)
     gif.addFrame(canvas, {copy: true, delay: 2000})
   } else {
     drawneutral(name);
