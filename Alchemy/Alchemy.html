@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Symbol.png" />
+  <title>GifStuck - Alchemy</title>
+
+  <meta property="og:title" content="GifStuck - Alchemy " />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Icon.png" />
+  <meta property="og:description" content="Generate Alchemy images, not Gifs :(" />
+  <meta name="theme-color" content="#cccccc">
+
+  <link rel="stylesheet" href="https://flaringk.github.io/GifStuck/sylladex/sylladexstyle.css">
+  <style>
+    #bitmap {
+      background: #eee;
+      --col2: #000100;
+      border: solid var(--col2);
+      box-shadow: 2px 2px var(--col2), 4px 4px var(--col2), 6px 6px var(--col2), 8px 8px var(--col2), 10px 10px var(--col2);
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Generate enter name GIF</h1>
+  <br>
+  <h2>Step 1: Upload Assets</h2>
+  <div id="uploadwrap">
+    Upload items (Must be square):
+    <div id="uploadbg">
+      <div>
+        <label for="item1">Upload first item:</label>
+        <input type="file" id="item1" name="item1" accept="image/*" onchange="previewUpload(event, this, 0)">
+        <img src="assets/1.png" class="uploadedbg">
+      </div>
+      <div>
+        <label for="item2">Upload second item:</label>
+        <input type="file" id="item2" name="item2" accept="image/*" onchange="previewUpload(event, this, 1)">
+        <img src="assets/2.png" class="uploadedbg">
+      </div>
+      <div>
+        <label for="item3">If applicable, upload third item:</label>
+        <input type="file" id="item3" name="item3" accept="image/*" onchange="previewUpload(event, this, 1)">
+        <img src="assets/mark.png" class="uploadedbg">
+      </div>
+      <div>
+        <label for="item4">Upload alchemised item:</label>
+        <input type="file" id="item4" name="item4" accept="image/*" onchange="previewUpload(event, this, 1)">
+        <img src="assets/3.png" class="uploadedbg">
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <h2>Step 2: Alchemy options</h2>
+  <div id="useroptions"> 
+    <label for="itemno">How many items are alchemised?:</label>
+    <select name="itemno" id="itemno">
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="op1">Choose a alchemy operation:</label>
+    <select name="op1" id="op1">
+      <option value="0">&&</option>
+      <option value="1">||</option>
+      <option value="2">=</option>
+    </select>
+    <br>
+    <label for="op2">If applicable choose a second alchemy operation:</label>
+    <select name="op2" id="op2">
+      <option value="0">&&</option>
+      <option value="1">||</option>
+      <option value="2">=</option>
+    </select>
+    <br>
+    <label for="name">Choose a name for the new item:</label>
+    <input type="text" name="name" id="name" value="Pogohammer">
+  </div>
+  <div id="optionsWrap">
+    GRIST TYPES AND COST
+    <br>
+    <label for="name">Choose the ammount of grist types:</label>
+    <input type="number" name="types" id="types" value="1" min="1" onchange="addtypes()">
+    <br><br>
+    <div id="gristwrapwrap" style="padding-top: 0px;">
+      <div id="gristwrap">
+        <label for="grist">Choose a grist:</label>
+        <select name="grist" id="grist">
+          <option value="13">Amber</option>
+          <option value="3">Amethyst</option>
+          <option value="1">Artifact</option>
+          <option value="16" selected>Build</option>
+          <option value="11">Caulk</option>
+          <option value="7">Chalk</option>
+          <option value="9">Cobalt</option>
+          <option value="14">Diamond</option>
+          <option value="4">Garnet</option>
+          <option value="5">Iron</option>
+          <option value="6">Marble</option>
+          <option value="17">Rainbow</option>
+          <option value="10">Ruby</option>
+          <option value="8">Shale</option>
+          <option value="12">Tar</option>
+          <option value="2">Uranium</option>
+          <option value="15">Zillium</option>
+        </select>
+        <br>
+        <label for="cost">Choose the grist cost:</label>
+        <input type="text" name="cost" id="cost" value="20">
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <h2>Step 3: Create</h2>
+  <button id="createGIF" onclick="createAlchemy()">Create Image</button>
+
+  <br>
+  <canvas width="650" height="300" id="bitmap"></canvas>
+
+  <p id=intro>If there are any problems, don't hesitate to dm me on discord at FlaringK#4275</p>
+  <br>
+  <div id="preload" style="display: none;">
+    <img src="assets/and.png" alt="" id="and">
+    <img src="assets/or.png" alt="" id="or">
+    <img src="assets/equal.png" alt="" id="gristsprites">
+    <img src="assets/blank.png" alt="" id="blank">
+    <img src="assets/box.png" alt="" id="box">
+    <img src="assets/GRISTSPRITES.png" alt="" id="gristsprites">
+  </div>
+
+  <script src="alchemy.js"></script>
+</body>
+</html>
