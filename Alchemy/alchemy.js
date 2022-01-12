@@ -47,19 +47,30 @@ let createAlchemy = () => {
   var boxpos = []
 
   // Draw boxes and items
-  if (options[0].value == "2") {
-    boxpos = [127, 283, 435]
+  switch (options[0].value) {
+    case "0":
+      boxpos = [280]
 
-    context.drawImage(assets[options[1].value], 222, 119)
-    context.drawImage(equal, 374, 119)
+      uploads = [uploads[3]]
+      break;
+    case "2":
+      boxpos = [127, 283, 435]
 
-    uploads.splice(2, 1)
-  } else {
-    boxpos = [56, 204, 351, 500]
+      context.drawImage(assets[options[1].value], 222, 119)
+      context.drawImage(equal, 374, 119)
+  
+      uploads.splice(2, 1)
+      break;
+    case "3":
+      boxpos = [56, 204, 351, 500]
 
-    context.drawImage(assets[options[1].value], 146, 119)
-    context.drawImage(assets[options[2].value], 294, 119)
-    context.drawImage(equal, 441, 119)
+      context.drawImage(assets[options[1].value], 146, 119)
+      context.drawImage(assets[options[2].value], 294, 119)
+      context.drawImage(equal, 441, 119)
+      break;
+  
+    default:
+      break;
   }
 
   boxpos.forEach((e, i) => {
