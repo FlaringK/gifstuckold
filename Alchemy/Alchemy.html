@@ -26,7 +26,7 @@
 </head>
 <body>
 
-  <h1>Generate enter name GIF</h1>
+  <h1>Generate ALCHEMY IMAGE</h1>
   <br>
   <h2>Step 1: Upload Assets</h2>
   <div id="uploadwrap">
@@ -79,35 +79,35 @@
     </select>
     <br>
     <label for="name">Choose a name for the new item:</label>
-    <input type="text" name="name" id="name" value="Pogohammer">
+    <input type="text" name="name" id="name" value="Number the III">
   </div>
   <div id="optionsWrap">
     GRIST TYPES AND COST
     <br>
     <label for="name">Choose the ammount of grist types:</label>
     <input type="number" name="types" id="types" value="1" min="1" onchange="addtypes()">
-    <br><br>
+    <br>
     <div id="gristwrapwrap" style="padding-top: 0px;">
       <div id="gristwrap">
         <label for="grist">Choose a grist:</label>
         <select name="grist" id="grist">
-          <option value="13">Amber</option>
-          <option value="3">Amethyst</option>
-          <option value="1">Artifact</option>
-          <option value="16" selected>Build</option>
-          <option value="11">Caulk</option>
-          <option value="7">Chalk</option>
-          <option value="9">Cobalt</option>
-          <option value="14">Diamond</option>
-          <option value="4">Garnet</option>
-          <option value="5">Iron</option>
-          <option value="6">Marble</option>
-          <option value="17">Rainbow</option>
-          <option value="10">Ruby</option>
-          <option value="8">Shale</option>
-          <option value="12">Tar</option>
-          <option value="2">Uranium</option>
-          <option value="15">Zillium</option>
+          <option value="0">Amber</option>
+          <option value="1">Amethyst</option>
+          <option value="2">Artifact</option>
+          <option value="3" selected>Build</option>
+          <option value="4">Caulk</option>
+          <option value="5">Chalk</option>
+          <option value="6">Cobalt</option>
+          <option value="7">Diamond</option>
+          <option value="8">Garnet</option>
+          <option value="9">Iron</option>
+          <option value="10">Marble</option>
+          <option value="11">Rainbow</option>
+          <option value="12">Ruby</option>
+          <option value="13">Shale</option>
+          <option value="14">Tar</option>
+          <option value="15">Uranium</option>
+          <option value="16">Zillium</option>
         </select>
         <br>
         <label for="cost">Choose the grist cost:</label>
@@ -118,6 +118,7 @@
 
   <br>
   <h2>Step 3: Create</h2>
+  <p id=intro>Since there are alot of grist types, some assets may not have loaded when you hit create. If this happens, just give it a second and try again.</p>
   <button id="createGIF" onclick="createAlchemy()">Create Image</button>
 
   <br>
@@ -132,6 +133,25 @@
     <img src="assets/blank.png" alt="" id="blank">
     <img src="assets/box.png" alt="" id="box">
     <img src="assets/GRISTSPRITES.png" alt="" id="gristsprites">
+  </div>
+  <div id="gristimg" style="display: none;">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/AMBER.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/AMETHYST.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/ARTIFACT.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/BUILD.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/CAULK.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/CHALK.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/COBALT.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/DIAMOND.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/GARNET.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/IRON.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/MARBLE.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/RAINBOW.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/RUBY.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/SHALE.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/TAR.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/URANIUM.png">
+    <img src="https://raw.githubusercontent.com/FlaringK/tablestuck/master/GRIST/ZILLIUM.png">
   </div>
 
   <script src="alchemy.js"></script>
