@@ -36,8 +36,9 @@ let createAlchemy = () => {
   var uploads = Array.prototype.slice.call(document.querySelectorAll("#uploadbg img"))
   var name = document.getElementById("name").value.toUpperCase()
 
-  var bg = assets[3]
-  var box = assets[4]
+  var bg = document.getElementById("blank")
+  var box = document.getElementById("box")
+  var equal = document.getElementById("equal")
 
   // Clear screen
   context.drawImage(bg, 0, 0)
@@ -48,7 +49,7 @@ let createAlchemy = () => {
     boxpos = [127, 283, 435]
 
     context.drawImage(assets[options[1].value], 222, 119)
-    context.drawImage(assets[2], 374, 119)
+    context.drawImage(equal, 374, 119)
 
     uploads.splice(2, 1)
   } else {
@@ -56,7 +57,7 @@ let createAlchemy = () => {
 
     context.drawImage(assets[options[1].value], 146, 119)
     context.drawImage(assets[options[2].value], 294, 119)
-    context.drawImage(assets[2], 441, 119)
+    context.drawImage(equal, 441, 119)
   }
 
   boxpos.forEach((e, i) => {
