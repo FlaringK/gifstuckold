@@ -30,6 +30,8 @@ addtypes()
 var canvas = document.getElementById('bitmap');
 var context = canvas.getContext('2d');
 
+context.drawImage(document.getElementById("canvas"), 0, 0);
+
 let createAlchemy = () => {
   var assets = document.querySelectorAll("#preload img")
   var options = document.querySelectorAll("#useroptions select")
