@@ -255,7 +255,7 @@ class basicModus {
     this.cardmini = list[2]
   }
 
-  bumnpcards = pick => {
+  bumnpcards = (pick, tickback, newbg) => {
     for (let j = 0; j < this.displaylist.length; j++) {
       clearcanvas();
       context.drawImage(this.bg, 0, 0)
@@ -272,6 +272,11 @@ class basicModus {
   
       this.drawcardbar(0)
       this.gif.addFrame(canvas, {copy: true, delay: 50});
+
+      if (tickback) {   
+        tickback = false
+        this.bg = newbg
+      }
     }
   }
   
@@ -284,6 +289,7 @@ class basicModus {
     const sdexaction = document.getElementById('sdex').value
     const itemaction = document.getElementById('item').value
     const backgrounds = document.querySelectorAll(".uploadedbg")
+    var tickback = document.getElementById("check").checked
 
     //get bg
     this.bg = backgrounds[0]
@@ -325,7 +331,7 @@ class basicModus {
     this.blankcount += pick ? 1 : -1
     this.bg = backgrounds[1]
   
-    this.bumnpcards(pick)
+    this.bumnpcards(pick, tickback, backgrounds[2])
   
   
     //STEP 4: hold frame 2

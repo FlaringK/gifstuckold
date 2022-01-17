@@ -141,3 +141,11 @@ h2 {
   box-shadow: 2px 2px var(--col2), 4px 4px var(--col2), 6px 6px var(--col2), 8px 8px var(--col2), 10px 10px var(--col2);
   margin-bottom: 40px;
 }
+
+#uploadbgTick {
+  display: none
+}
+
+#check:checked ~ #uploadbgTick {
+  display: block;
+}
